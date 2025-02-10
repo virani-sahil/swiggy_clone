@@ -29,10 +29,10 @@ const Category = () => {
     return (
         <div className="mt-5 max-w-[1200px] mx-auto ">
             <div className="flex items-center justify-between">
-                <div className="font-bold text-[35px]">{`What's on your mind?`}</div>
+                <div className="font-bold text-[20px] md:text-[35px]">{`What's on your mind?`}</div>
                 <div className="flex gap-10">
-                    <div onClick={prevSlide} className="bg-gray-400 w-[40px] h-[40px] flex justify-center items-center cursor-pointer rounded-full"><FaArrowLeft /></div>
-                    <div onClick={nextSlide} className="bg-gray-400 w-[40px] h-[40px] flex justify-center items-center cursor-pointer rounded-full"><FaArrowRight /></div>
+                    <div onClick={prevSlide} className="bg-gray-400 w-[30px] md:w-[40px] h-[30px] md:h-[40px] flex justify-center items-center cursor-pointer rounded-full"><FaArrowLeft /></div>
+                    <div onClick={nextSlide} className="bg-gray-400 w-[30px] md:w-[40px] h-[30px] md:h-[40px] flex justify-center items-center cursor-pointer rounded-full"><FaArrowRight /></div>
                 </div>
             </div>
             <div className="flex overflow-hidden">
