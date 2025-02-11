@@ -20,6 +20,7 @@ export const menu = [
     {
         Icon: IoPersonOutline,
         name: "Sign In",
+        link:"/signin"
     },
     {
         Icon: IoCartOutline,

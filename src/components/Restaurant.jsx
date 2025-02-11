@@ -30,7 +30,8 @@ const Restaurant = () => {
 
     function addItem(index) {
         const selectProduct = restaurant[index];
-        localStorage.setItem("cartitem", JSON.stringify(selectProduct));
+        const localData = JSON.parse(localStorage.getItem("cartitem")) ?? []
+        localStorage.setItem("cartitem", JSON.stringify([...localData, selectProduct]));
         setCart([...cart, selectProduct])
     }
 

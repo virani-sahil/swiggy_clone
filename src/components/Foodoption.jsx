@@ -9,15 +9,18 @@ const Foodoption = () => {
 
     function addItem(index) {
         const selectProduct = restaurantData[index];
+        const localData = JSON.parse(localStorage.getItem("cartitem")) ?? [];
+        localStorage.setItem("cartitem", JSON.stringify([...localData, selectProduct]))
         setCart([...cart, selectProduct])
     }
+
     return (
         <div className="mt-5 max-w-[1200px] mx-auto ">
             <div className="flex items-center">
                 <div className="font-bold text-[20px] md:text-[35px]">Top restaurant chains in Rajkot</div>
             </div>
             <div className="gap-10 pt-10" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))", display: "grid" }}>
-            {
+                {
                     restaurantData.map((val, ind) => {
                         return (
                             <div key={ind} className="shrink-0 duration-500 ">
@@ -38,7 +41,9 @@ const Foodoption = () => {
                                     </div>
                                     <div className="flex justify-between items-center">
                                         {val?.place}
-                                        <button onClick={() => addItem(ind)} className="bg-amber-500 p-1 rounded-md">add item</button>
+                                        
+                                            <button onClick={() => addItem(ind)} className="bg-amber-500 p-1 h-[30px] rounded-md">add item</button>
+                                        
                                     </div>
                                 </div>
                             </div>
